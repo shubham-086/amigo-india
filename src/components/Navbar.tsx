@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useSession, signOut } from "next-auth/react";
@@ -33,6 +33,7 @@ import {
 } from "./ui/sheet";
 import { Button } from "./ui/button";
 import { AvatarFallback } from "./ui/avatar";
+import Image from "next/image";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -57,7 +58,12 @@ const Navbar = () => {
     <nav className="bg-white shadow-md">
       <div className="pl-5 flex items-center justify-between h-[70px]">
         <div className="flex items-center">
-          <img src="/amigo-india.png" alt="Amigo India" className="h-12" />
+          <Image
+            src="/amigo-india.png"
+            alt="Amigo India"
+            height={100}
+            width={115}
+          />
         </div>
         <div className="hidden md:flex gap-5">
           <Link

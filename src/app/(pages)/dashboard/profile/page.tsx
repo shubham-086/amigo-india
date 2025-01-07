@@ -50,6 +50,7 @@ const Profile: React.FC = () => {
 
   // Fetch profile data
   useEffect(() => {
+    if (status === "loading") return;
     const fetchProfile = async () => {
       try {
         const { data } = await axios.post<ApiResponse>("/api/user", {
@@ -72,12 +73,8 @@ const Profile: React.FC = () => {
       }
     };
 
-    console.log(status);
-    if (status === "authenticated") {
-      console.log(status);
-      fetchProfile();
-    }
-  }, [form, status, toast]);
+    fetchProfile();
+  }, [form, status, toast, session?.user.email]);
 
   const onSubmit = async (data: z.infer<typeof userSchema>) => {
     setIsSubmitting(true);
@@ -177,7 +174,7 @@ const Profile: React.FC = () => {
               <DialogHeader>
                 <DialogTitle>Edit Profile</DialogTitle>
                 <DialogDescription>
-                  Make changes to your profile here. Click save when you're
+                  Make changes to your profile here. Click save when you&apos;re
                   done.
                 </DialogDescription>
               </DialogHeader>

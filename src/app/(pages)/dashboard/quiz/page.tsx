@@ -21,6 +21,7 @@ import axios from "axios";
 import { useGlobalContext } from "@/context/GlobalContext";
 import { useSession } from "next-auth/react";
 import { User } from "next-auth";
+import Image from "next/image";
 
 const QuizzesPage = () => {
   const [quizzes, setQuizzes] = useState<any[]>([]);
@@ -165,11 +166,14 @@ const QuizzesPage = () => {
           ) : (
             filteredQuizzes.map((quiz, idx) => (
               <Card key={idx} className="hover:shadow-lg transition">
-                <CardHeader className="p-3">
-                  <img
+                <CardHeader className="p-3 w-full h-44">
+                  <Image
                     src={quiz.imageUrl}
                     alt={quiz.title}
-                    className="w-full h-40 object-cover rounded-t-md"
+                    layout="responsive"
+                    width={16}
+                    height={6}
+                    className="object-cover rounded-t-md overflow-hidden"
                   />
                 </CardHeader>
                 <CardContent className="p-4 pt-0">

@@ -1,6 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useRouter, useParams } from "next/navigation";
+import { useParams } from "next/navigation";
 import axios from "axios";
 import { ApiResponse } from "@/types/ApiResponse";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -66,7 +66,7 @@ const Result = () => {
 
         <CardContent>
           <p className="text-lg text-center text-gray-600">
-            You've completed the quiz. Thank you for participating!
+            You&apos;ve completed the quiz. Thank you for participating!
           </p>
           <div className="mt-6 flex justify-center">
             <div className="w-2/3">

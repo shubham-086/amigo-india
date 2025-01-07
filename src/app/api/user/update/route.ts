@@ -1,7 +1,7 @@
 import User from "@/models/User";
 import connectDB from "@/lib/connectDB";
 import { NextResponse } from "next/server";
-import cloudinary, { uploadImage } from "@/lib/cloudinary";
+import { uploadImage } from "@/lib/cloudinary";
 
 export async function PUT(request: Request) {
   try {

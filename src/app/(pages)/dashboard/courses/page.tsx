@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import Image from "next/image";
 
 const courses = [
   {
@@ -86,11 +87,14 @@ export default function CoursesPage() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         {courses.map((course, idx) => (
           <Card key={idx} className="hover:shadow-lg transition">
-            <CardHeader className="p-0">
-              <img
+            <CardHeader className="p-0 w-full h-44">
+              <Image
                 src={course.image}
                 alt={course.title}
-                className="w-full h-40 object-cover rounded-t-md"
+                layout="responsive"
+                width={16}
+                height={9}
+                className="object-cover rounded-t-md overflow-hidden"
               />
             </CardHeader>
             <CardContent className="p-4">

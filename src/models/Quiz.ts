@@ -1,4 +1,4 @@
-import mongoose, { Schema, Document, model } from "mongoose";
+import mongoose, { Schema, Document } from "mongoose";
 
 // QuizCategory Schema
 interface IQuizCategory extends Document {

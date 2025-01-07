@@ -64,7 +64,7 @@ export async function POST(request: Request) {
   }
 }
 
-export async function GET(request: Request) {
+export async function GET() {
   try {
     await connectDB();
     const quizzes = await Quiz.find().populate("category");

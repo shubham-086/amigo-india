@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Table,
@@ -29,7 +28,7 @@ const Skeleton: React.FC = () => {
 };
 
 export default function Page() {
-  const [userData, setUserData] = useState<any | null>(null);
+  const [userData, setUserData] = useState<ApiResponse | null>(null);
   const { data: session, status } = useSession();
   const user = session?.user as User;
 
@@ -41,7 +40,7 @@ export default function Page() {
         userId: user.id,
       });
       // console.log("User Data: ", response.data);
-      setUserData(response.data.data);
+      setUserData(response.data);
     };
 
     fetchUserData();
@@ -51,7 +50,7 @@ export default function Page() {
     return <Skeleton />;
   }
 
-  const { userActivities, quizStats, latestUserActivity } = userData;
+  const { userActivities, quizStats, latestUserActivity } = userData.data;
   console.log(userData);
 
   return (

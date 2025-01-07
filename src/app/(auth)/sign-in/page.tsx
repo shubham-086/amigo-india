@@ -140,7 +140,7 @@ const SignInPage = () => {
                         >
                           {isSubmitting ? (
                             <>
-                              <Loader2 className="mr-1 h-6 w-6 animate-spin" />{" "}
+                              <Loader2 className="mr-1 h-6 w-6 animate-spin" />
                               Please wait...
                             </>
                           ) : (
@@ -156,7 +156,7 @@ const SignInPage = () => {
                         </Button>
                       </div>
                       <div className="mt-4 text-center text-sm">
-                        Don't have an account?{" "}
+                        Don&apos;t have an account?
                         <Link
                           href="/sign-up"
                           className="underline underline-offset-4"
