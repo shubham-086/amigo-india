@@ -14,9 +14,11 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       authorize: async (credentials: any): Promise<any> => {
-        await connectDB();
         try {
-          const user = await User.findOne({ email: credentials.email });
+          await connectDB();
+          const user = await User.findOne({ email: credentials.email }).select(
+            "+password"
+          );
 
           if (!user) {
             throw new Error("No user found");

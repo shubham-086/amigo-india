@@ -12,6 +12,10 @@ const notoSans = localFont({
 export const metadata: Metadata = {
   title: "Amigo India",
   description: "",
+  keywords: "",
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
 export default function RootLayout({
