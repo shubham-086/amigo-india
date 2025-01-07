@@ -2,13 +2,9 @@ import connectDB from "@/lib/connectDB";
 import { QuizResult } from "@/models/Quiz";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: { id: string } }
-) {
+export async function POST(request: NextRequest) {
   try {
-    await connectDB();
-    const resultId = params.id;
+    const { resultId } = await request.json();
 
     if (!resultId) {
       return NextResponse.json(
@@ -16,6 +12,8 @@ export async function GET(
         { status: 400 }
       );
     }
+    await connectDB();
+
     const result = await QuizResult.findById(resultId)
       .populate({
         path: "answers",

@@ -22,8 +22,9 @@ const Result = () => {
     const fetchQuiz = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get<ApiResponse>(
-          `/api/quiz/result/${resultId}`
+        const response = await axios.post<ApiResponse>(
+          "/api/quiz/result/show",
+          { resultId }
         );
         if (!response.data.success) {
           console.log("No quiz result found.");

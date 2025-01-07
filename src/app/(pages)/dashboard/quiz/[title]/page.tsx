@@ -59,9 +59,9 @@ const Quiz: React.FC = () => {
     setIsLoading(true);
     const fetchQuiz = async () => {
       try {
-        const response = await axios.get<ApiResponse>(
-          `/api/quiz/${selectedQuiz.id}`
-        );
+        const response = await axios.post<ApiResponse>("/api/quiz/quizData", {
+          quizId: selectedQuiz.id,
+        });
         setQuizData(response.data.data);
         setIsLoading(false);
       } catch (error) {
