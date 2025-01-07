@@ -11,7 +11,6 @@ export interface IUser extends Document {
   createdAt: Date;
   image: string;
   institute: string;
-  quizCategoryStats: mongoose.Types.ObjectId[];
 }
 
 const userSchema = new Schema<IUser>({
@@ -41,9 +40,6 @@ const userSchema = new Schema<IUser>({
   createdAt: { type: Date, default: Date.now },
   image: { type: String, default: "" },
   institute: { type: String, default: null },
-  quizCategoryStats: [
-    { type: mongoose.Schema.Types.ObjectId, ref: "CategoryStat" },
-  ],
 });
 
 const User =
