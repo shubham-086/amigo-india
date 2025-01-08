@@ -42,7 +42,7 @@ const data = {
       items: [
         {
           title: "My courses",
-          url: "#",
+          url: "/dashboard/courses/my-courses",
         },
         {
           title: "Explore",
@@ -59,22 +59,22 @@ const data = {
           title: "Take Quiz",
           url: "/dashboard/quiz",
         },
-        {
-          title: "Practice Questions",
-          url: "#",
-        },
+        // {
+        //   title: "Practice Questions",
+        //   url: "#",
+        // },
       ],
     },
     {
       title: "Interview Prepration",
-      url: "#",
+      url: "/dashboard/interview-prep",
       icon: ClipboardList,
     },
-    {
-      title: "Code Compilor",
-      url: "#",
-      icon: MonitorCog,
-    },
+    // {
+    //   title: "Code Compilor",
+    //   url: "#",
+    //   icon: MonitorCog,
+    // },
   ],
 };
 

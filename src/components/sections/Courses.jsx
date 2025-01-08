@@ -10,46 +10,46 @@ const CoursesSection = () => {
       description:
         "Learn front-end and back-end development in this comprehensive bootcamp.",
       duration: "6 Months",
-      link: "/courses/web-development",
+      link: "#",
     },
     {
       title: "Data Analytics",
       image: "/courses/data-analytics.jpg",
       description: "Master data analysis, machine learning, and AI techniques.",
       duration: "4 Months",
-      link: "/courses/data-science",
+      link: "#",
     },
     {
       title: "Data Structure with Java",
       image: "/courses/data-structure.jpg",
       description:
-        "Gain practical experience with SEO, social media, and content marketing.",
+        "Build a strong foundation in data structures and algorithms using Java.",
       duration: "3 Months",
-      link: "/courses/digital-marketing",
+      link: "#",
     },
     {
       title: "Python Programming",
       image: "/courses/python.png",
       description:
-        "Gain practical experience with SEO, social media, and content marketing.",
+        "Learn Python programming with real-world applications and hands-on projects.",
       duration: "3 Months",
-      link: "/courses/digital-marketing",
+      link: "#",
     },
     {
       title: "English Communication",
       image: "/courses/english.jpg",
       description:
-        "Gain practical experience with SEO, social media, and content marketing.",
+        "Improve your English communication skills for personal and professional growth.",
       duration: "3 Months",
-      link: "/courses/digital-marketing",
+      link: "#",
     },
     {
       title: "Campus Recruitment Training",
       image: "/courses/campus-recruitment.jpg",
       description:
-        "Gain practical experience with SEO, social media, and content marketing.",
+        "Prepare for campus recruitment with aptitude tests, interview tips, and group discussions.",
       duration: "3 Months",
-      link: "/courses/digital-marketing",
+      link: "#",
     },
   ];
 

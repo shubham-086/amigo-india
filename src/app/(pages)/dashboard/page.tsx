@@ -39,7 +39,6 @@ export default function Page() {
       const response = await axios.post<ApiResponse>("/api/user/activity", {
         userId: user.id,
       });
-      // console.log("User Data: ", response.data);
       setUserData(response.data);
     };
 
@@ -50,8 +49,42 @@ export default function Page() {
     return <Skeleton />;
   }
 
-  const { userActivities, quizStats, latestUserActivity } = userData.data;
-  console.log(userData);
+  const defaultQuizStats = {
+    attempts: 0,
+    completed: 0,
+    averageScore: 0,
+    lastAttempt: new Date().toISOString(),
+  };
+
+  const defaultLatestActivity = [
+    {
+      _id: "default",
+      activityId: {
+        title: "Sample Activity",
+        level: "Beginner",
+        category: { name: "General" },
+      },
+      createdAt: new Date().toISOString(),
+    },
+  ];
+
+  const defaultUserActivities = [
+    {
+      _id: "default",
+      activityId: {
+        title: "Sample Activity",
+        level: "Beginner",
+      },
+      activityTypeRef: "Quiz",
+      createdAt: new Date().toISOString(),
+    },
+  ];
+
+  const quizStats = userData?.data?.quizStats ?? defaultQuizStats;
+  const latestUserActivity =
+    userData?.data?.latestUserActivity ?? defaultLatestActivity;
+  const userActivities =
+    userData?.data?.userActivities ?? defaultUserActivities;
 
   return (
     <div className="p-6 space-y-6">
@@ -90,24 +123,28 @@ export default function Page() {
           <CardTitle>Latest Activity</CardTitle>
         </CardHeader>
         <CardContent>
-          {latestUserActivity.map((activity: any) => (
-            <div
-              key={activity._id}
-              className="flex justify-between items-center bg-gray-50 p-4 rounded-lg mb-4"
-            >
-              <div>
-                <h3 className="font-medium text-lg">
-                  {activity.activityId.title} ({activity.activityId.level})
-                </h3>
-                <p className="text-gray-500 text-sm">
-                  {activity.activityId.category.name}
+          {latestUserActivity.length > 0 ? (
+            latestUserActivity.map((activity: any) => (
+              <div
+                key={activity._id}
+                className="flex justify-between items-center bg-gray-50 p-4 rounded-lg mb-4"
+              >
+                <div>
+                  <h3 className="font-medium text-lg">
+                    {activity.activityId.title} ({activity.activityId.level})
+                  </h3>
+                  <p className="text-gray-500 text-sm">
+                    {activity.activityId.category.name}
+                  </p>
+                </div>
+                <p className="text-gray-400 text-sm">
+                  {new Date(activity.createdAt).toLocaleString()}
                 </p>
               </div>
-              <p className="text-gray-400 text-sm">
-                {new Date(activity.createdAt).toLocaleString()}
-              </p>
-            </div>
-          ))}
+            ))
+          ) : (
+            <p className="text-gray-500 text-center">No activity yet.</p>
+          )}
         </CardContent>
       </Card>
 
@@ -117,28 +154,32 @@ export default function Page() {
           <CardTitle>User Activities</CardTitle>
         </CardHeader>
         <CardContent>
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Title</TableHead>
-                <TableHead>Level</TableHead>
-                <TableHead>Type</TableHead>
-                <TableHead>Date</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {userActivities.map((activity: any) => (
-                <TableRow key={activity._id}>
-                  <TableCell>{activity.activityId.title}</TableCell>
-                  <TableCell>{activity.activityId.level}</TableCell>
-                  <TableCell>{activity.activityTypeRef}</TableCell>
-                  <TableCell>
-                    {new Date(activity.createdAt).toLocaleString()}
-                  </TableCell>
+          {userActivities.length > 0 ? (
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Title</TableHead>
+                  <TableHead>Level</TableHead>
+                  <TableHead>Type</TableHead>
+                  <TableHead>Date</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {userActivities.map((activity: any) => (
+                  <TableRow key={activity._id}>
+                    <TableCell>{activity.activityId.title}</TableCell>
+                    <TableCell>{activity.activityId.level}</TableCell>
+                    <TableCell>{activity.activityTypeRef}</TableCell>
+                    <TableCell>
+                      {new Date(activity.createdAt).toLocaleString()}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          ) : (
+            <p className="text-gray-500 text-center">No activities found.</p>
+          )}
         </CardContent>
       </Card>
     </div>

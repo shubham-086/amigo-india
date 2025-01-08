@@ -157,13 +157,13 @@ const SignUpPage = () => {
                             "Signup"
                           )}
                         </Button>
-                        <Button
+                        {/* <Button
                           variant="outline"
                           className="w-full"
                           type="button"
                         >
                           Continue with Google
-                        </Button>
+                        </Button> */}
                       </div>
                       <div className="mt-4 text-center text-sm">
                         Already have an account?{" "}
