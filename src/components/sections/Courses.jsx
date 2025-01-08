@@ -23,33 +23,33 @@ const CoursesSection = () => {
       title: "Data Structure with Java",
       image: "/courses/data-structure.jpg",
       description:
-        "Gain practical experience with SEO, social media, and content marketing.",
+        "Build a strong foundation in data structures and algorithms using Java.",
       duration: "3 Months",
-      link: "/courses/digital-marketing",
+      link: "/courses/data-structure",
     },
     {
       title: "Python Programming",
       image: "/courses/python.png",
       description:
-        "Gain practical experience with SEO, social media, and content marketing.",
+        "Learn Python programming with real-world applications and hands-on projects.",
       duration: "3 Months",
-      link: "/courses/digital-marketing",
+      link: "/courses/python-programming",
     },
     {
       title: "English Communication",
       image: "/courses/english.jpg",
       description:
-        "Gain practical experience with SEO, social media, and content marketing.",
+        "Improve your English communication skills for personal and professional growth.",
       duration: "3 Months",
-      link: "/courses/digital-marketing",
+      link: "/courses/english-communication",
     },
     {
       title: "Campus Recruitment Training",
       image: "/courses/campus-recruitment.jpg",
       description:
-        "Gain practical experience with SEO, social media, and content marketing.",
+        "Prepare for campus recruitment with aptitude tests, interview tips, and group discussions.",
       duration: "3 Months",
-      link: "/courses/digital-marketing",
+      link: "/courses/campus-recruitment",
     },
   ];
 
