@@ -10,14 +10,14 @@ const CoursesSection = () => {
       description:
         "Learn front-end and back-end development in this comprehensive bootcamp.",
       duration: "6 Months",
-      link: "/courses/web-development",
+      link: "#",
     },
     {
       title: "Data Analytics",
       image: "/courses/data-analytics.jpg",
       description: "Master data analysis, machine learning, and AI techniques.",
       duration: "4 Months",
-      link: "/courses/data-science",
+      link: "#",
     },
     {
       title: "Data Structure with Java",
@@ -25,7 +25,7 @@ const CoursesSection = () => {
       description:
         "Build a strong foundation in data structures and algorithms using Java.",
       duration: "3 Months",
-      link: "/courses/data-structure",
+      link: "#",
     },
     {
       title: "Python Programming",
@@ -33,7 +33,7 @@ const CoursesSection = () => {
       description:
         "Learn Python programming with real-world applications and hands-on projects.",
       duration: "3 Months",
-      link: "/courses/python-programming",
+      link: "#",
     },
     {
       title: "English Communication",
@@ -41,7 +41,7 @@ const CoursesSection = () => {
       description:
         "Improve your English communication skills for personal and professional growth.",
       duration: "3 Months",
-      link: "/courses/english-communication",
+      link: "#",
     },
     {
       title: "Campus Recruitment Training",
@@ -49,7 +49,7 @@ const CoursesSection = () => {
       description:
         "Prepare for campus recruitment with aptitude tests, interview tips, and group discussions.",
       duration: "3 Months",
-      link: "/courses/campus-recruitment",
+      link: "#",
     },
   ];
 
